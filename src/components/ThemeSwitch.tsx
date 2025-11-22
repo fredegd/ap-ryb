@@ -3,28 +3,23 @@ import { useTheme } from '../context/ThemeContext';
 const ThemeSwitch = () => {
     const { theme, toggleTheme } = useTheme();
 
-    console.log('🎭 ThemeSwitch rendered with theme:', theme);
-
     const handleClick = (e: React.MouseEvent) => {
         e.preventDefault();
         e.stopPropagation();
-        console.log('🔄 Theme switch button clicked! Current theme:', theme);
-        console.log('🔄 About to toggle theme...');
         toggleTheme();
     };
 
     return (
         <button
             onClick={handleClick}
-            className="p-2 rounded-lg transition-all duration-300 hover:bg-gray-200/50 dark:hover:bg-red-500/10 focus:outline-none focus:ring-2 focus:ring-neon-yellow/50 border-2 border-red-500"
+            className="p-2 rounded-lg transition-all duration-300 hover:bg-gray-500/50 focus:outline-none  "
             aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
             title={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
         >
-            <span className="text-xs bg-yellow-400 text-black px-1 rounded">{theme}</span>
             {theme === 'light' ? (
                 // Moon icon for dark mode
                 <svg
-                    className="w-5 h-5 text-gray-900 dark:text-gray-50 transition-colors"
+                    className="w-5 h-5  transition-colors"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -40,7 +35,7 @@ const ThemeSwitch = () => {
             ) : (
                 // Sun icon for light mode
                 <svg
-                    className="w-5 h-5 text-gray-900 dark:text-gray-50 transition-colors"
+                    className="w-5 h-5  transition-colors"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"

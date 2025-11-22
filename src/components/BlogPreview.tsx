@@ -1,5 +1,4 @@
 import { blogArticles } from '../blogData';
-import NeonDivider from './NeonDivider';
 import BlogCard from './BlogCard';
 import { Link } from 'react-router-dom';
 
@@ -18,9 +17,8 @@ const BlogPreview = () => {
     return (
         <section className="py-20">
             <div className="container mx-auto px-6">
-                <h2 className="text-4xl font-bold uppercase text-center mb-4 text-neon-yellow">
+                <h2 className="text-4xl font-bold uppercase text-center mb-4 ">
                     Dal mio Blog                </h2>
-                <NeonDivider className="w-16 mx-auto mb-10" />
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                     {blogEntries.map((article) => (
@@ -31,7 +29,7 @@ const BlogPreview = () => {
                 <div className="text-center">
                     <Link
                         to="/blog"
-                        className="inline-block bg-neon-yellow text-dark-bg font-bold text-lg px-8 py-3 rounded-lg hover:bg-opacity-80 transition duration-300 shadow-lg hover:shadow-neon-yellow/20"
+                        className="inline-block  text-dark-bg font-bold text-lg px-8 py-3 rounded-lg hover:bg-opacity-80 transition duration-300 shadow-lg "
                     >
                         Leggi gli altri Articoli
                     </Link>

@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import ThemeDebugger from './components/ThemeDebugger';
 import About from './components/About';
 import Contacts from './components/Contacts';
 import Footer from './components/Footer';
@@ -21,10 +20,9 @@ function App() {
   return (
     <ThemeProvider>
       <div className="font-passion relative min-h-screen overflow-x-hidden transition-all duration-500 ease-in-out">
-        <ThemeDebugger />
         <BackgroundAnimation />
         <Navbar />
-        <main>
+        <main className='bg-gray-500/10 '>
           <Routes>
             <Route path="/" element={
               <>

@@ -1,5 +1,4 @@
 import { services } from '../servicesData';
-import NeonDivider from './NeonDivider';
 import ServiceCard from './ServiceCard';
 
 const ServiceListPage = () => {
@@ -7,8 +6,7 @@ const ServiceListPage = () => {
         <section id="services" className="py-20 bg-dark-bg">
             <div className="container mx-auto px-6">
                 <div id="service-index">
-                    <h2 className="text-4xl font-bold uppercase text-center mb-4 text-neon-yellow">Servizi</h2>
-                    <NeonDivider className="w-16 mx-auto mb-10" />
+                    <h2 className="text-4xl font-bold uppercase text-center mb-4 ">Servizi</h2>
 
                     <div id="service-list" className="grid md:grid-cols-3 gap-8">
                         {Object.keys(services).map(id => {
