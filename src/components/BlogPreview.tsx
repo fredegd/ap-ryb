@@ -25,8 +25,7 @@ const BlogPreview = () => {
         <section className="py-20 bg-gray-800/30">
             <div className="container mx-auto px-6">
                 <h2 className="text-4xl font-bold uppercase text-center mb-4 text-neon-yellow">
-                    Ultimi Articoli del Blog
-                </h2>
+                    Dal mio Blog                </h2>
                 <NeonDivider className="w-16 mx-auto mb-10" />
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">

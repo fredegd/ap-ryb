@@ -8,7 +8,7 @@ const Services = () => {
   return (
     <section id="servizi" className="py-20 bg-gray-900/50">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold uppercase text-center mb-4 text-neon-yellow">I Nostri Percorsi di Benessere</h2>
+        <h2 className="text-4xl font-bold uppercase text-center mb-4 text-neon-yellow">Percorsi Benessere</h2>
         <NeonDivider className="w-16 mx-auto mb-10" />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -6,7 +6,7 @@ export interface Article {
 }
 
 export const blogArticles: Record<string, Article> = {
-  "false-myths": {
+  "falsi-miti": {
     title: "Falsi Miti Sull'Allenamento: Cosa EVITARE",
     date: "01 Ottobre 2025",
     tag: "Fitness & Chinesiologia",
