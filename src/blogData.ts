@@ -3,6 +3,7 @@ export interface Article {
   date: string;
   tag: string;
   content: string;
+  imageUrl?: string;
 }
 
 export const blogArticles: Record<string, Article> = {
@@ -10,6 +11,7 @@ export const blogArticles: Record<string, Article> = {
     title: "Falsi Miti Sull'Allenamento: Cosa EVITARE",
     date: "01 Ottobre 2025",
     tag: "Fitness & Chinesiologia",
+    imageUrl: "/addominali.png",
     content: `
             <p>La palestra e l'allenamento sono pieni di luoghi comuni che, se seguiti ciecamente, possono rallentare i tuoi progressi o, peggio, causare infortuni. Distinguiamo la verità dalla finzione.</p>
             <h3 class="text-2xl font-semibold text-neon-yellow mt-6 mb-3">Mito 1: Più si suda, più si bruciano grassi.</h3>
@@ -20,10 +22,11 @@ export const blogArticles: Record<string, Article> = {
             <p>Affidati a un professionista del movimento per un programma su misura. L'allenamento deve essere intelligente, non estenuante. Ricorda, la massoterapia di recupero è il complemento ideale per ottimizzare l'efficacia dei tuoi allenamenti, prevenendo gli infortuni dovuti all'eccessivo carico.</p>
         `,
   },
-  "arthritis-arthrosis": {
+  "artrite-artrosi": {
     title: "Artrite o Artrosi? Capire il Dolore Articolare",
     date: "20 Settembre 2025",
     tag: "Salute & Prevenzione",
+    imageUrl: "/artrite.jpeg",
     content: `
             <p>Il dolore articolare è comune, ma distinguere tra artrite e artrosi è il primo passo per un trattamento efficace. Sebbene i sintomi possano sembrare simili, le cause e gli approcci terapeutici sono molto diversi.</p>
             <h3 class="text-2xl font-semibold text-neon-yellow mt-6 mb-3">Artrosi: L'Usura dell'Articolazione</h3>
@@ -34,10 +37,11 @@ export const blogArticles: Record<string, Article> = {
             <p>In studio, valutiamo il tuo quadro clinico per sviluppare un piano di trattamento sicuro. L'obiettivo è ridurre il dolore, migliorare la gamma di movimento e rafforzare la muscolatura di supporto, integrandolo con la terapia prescritta dal tuo specialista.</p>
         `,
   },
-  "swimming-complete": {
+  nuoto: {
     title: "Nuoto: è Davvero lo Sport Più Completo?",
     date: "10 Ottobre 2025",
     tag: "Sport & Performance",
+    imageUrl: "/nuoto.jpg",
     content: `
             <p>Il nuoto è universalmente celebrato come lo sport "più completo". Questo è vero, ma con delle sfumature. È uno degli sport più efficaci perché coinvolge quasi tutti i gruppi muscolari e, grazie alla galleggiabilità, offre un allenamento a basso impatto, ideale per chi ha problemi articolari.</p>
             <h3 class="text-2xl font-semibold text-neon-yellow mt-6 mb-3">Cosa Rende il Nuoto Unico?</h3>
@@ -51,10 +55,11 @@ export const blogArticles: Record<string, Article> = {
             <p class="mt-4">Per un corpo veramente "reset" e performante, l'integrazione è la chiave.</p>
         `,
   },
-  "stretching-benefits": {
+  "stretching-benefici": {
     title: "Lo Stretching: Quando e Come Farlo Correttamente",
     date: "15 Novembre 2025",
     tag: "Salute & Prevenzione",
+    imageUrl: "/calorie.jpg",
     content: `
             <p>Lo stretching è una componente fondamentale del benessere fisico, ma c'è molta confusione su quando e come praticarlo per ottenere i massimi benefici. Facciamo chiarezza.</p>
             <h3 class="text-2xl font-semibold text-neon-yellow mt-6 mb-3">Stretching Dinamico vs. Statico</h3>

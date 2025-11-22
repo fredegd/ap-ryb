@@ -26,6 +26,13 @@ const ServicePage: React.FC = () => {
       </Link>
 
       <div className="max-w-4xl mx-auto p-8 bg-gray-900/50 rounded-xl shadow-2xl border border-neon-yellow/30">
+        {service.imageUrl && (
+          <img
+            src={service.imageUrl}
+            alt={service.title}
+            className="w-full object-cover rounded-lg aspect-[1/1] md:aspect-[3/2] mb-8"
+          />
+        )}
         <h1 id="detail-title" className="text-4xl font-bold mb-4 text-neon-yellow">{service.title}</h1>
         <p id="detail-meta" className="text-sm text-gray-400 mb-6">{service.category}</p>
         <div id="detail-content" className="text-lg text-gray-300 leading-relaxed space-y-6">

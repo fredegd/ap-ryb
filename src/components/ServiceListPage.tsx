@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
 import { services } from '../servicesData';
 import NeonDivider from './NeonDivider';
+import ServiceCard from './ServiceCard';
 
 const ServiceListPage = () => {
     return (
@@ -14,15 +14,7 @@ const ServiceListPage = () => {
                         {Object.keys(services).map(id => {
                             const service = services[id];
                             return (
-                                <div key={id} className="bg-gray-900/50 rounded-xl overflow-hidden shadow-xl border-t-2 border-neon-yellow/50 hover:shadow-[0_0_20px_rgba(226,255,0,0.3)] transition duration-300">
-                                    <div className="p-6">
-                                        <h3 className="text-xl font-semibold mb-3 text-gray-100">{service.title}</h3>
-                                        <p className="text-gray-400 text-sm mb-4">
-                                            {service.description.substring(0, 100)}...
-                                        </p>
-                                        <Link to={`/services/${id}`} className="text-neon-yellow text-sm font-medium hover:underline">Scopri di più &rarr;</Link>
-                                    </div>
-                                </div>
+                                <ServiceCard key={id} slug={id} service={service} />
                             );
                         })}
                     </div>

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import NeonDivider from './NeonDivider';
 import { services } from '../servicesData';
+import ServiceCard from './ServiceCard';
 
 const featuredServices = ['massaggio-decontratturante', 'linfodrenaggio', 'valutazione-posturale', 'personal-training'];
 
@@ -16,13 +17,7 @@ const Services = () => {
             const service = services[slug];
             if (!service) return null;
             return (
-              <div key={slug} className="bg-dark-bg p-8 rounded-xl shadow-2xl border-2 border-neon-yellow/30 transform hover:scale-[1.02] transition duration-500 flex flex-col">
-                <h3 className="text-2xl font-bold mb-3 text-neon-yellow">{service.title}</h3>
-                <p className="text-gray-400 mb-6 flex-grow">{service.description.substring(0, 100)}...</p>
-                <Link to={`/services/${slug}`} className="block w-full text-center py-2 border border-neon-yellow text-neon-yellow rounded-lg hover:bg-neon-yellow hover:text-dark-bg transition duration-300 mt-auto">
-                  Scopri di più
-                </Link>
-              </div>
+              <ServiceCard key={slug} slug={slug} service={service} />
             );
           })}
         </div>

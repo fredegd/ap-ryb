@@ -11,10 +11,12 @@ import ServicePage from './components/ServicePage';
 import Services from './components/Services';
 import BlogListPage from './components/BlogListPage';
 import BlogPreview from './components/BlogPreview';
+import BackgroundAnimation from './components/BackgroundAnimation';
 
 function App() {
   return (
-    <div className="bg-dark-bg text-gray-50 font-sans antialiased">
+    <div className="text-gray-50 font-passion relative min-h-screen overflow-x-hidden">
+      <BackgroundAnimation />
       <Navbar />
       <main>
         <Routes>

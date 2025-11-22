@@ -25,6 +25,7 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        passion: ['"Passion One"', 'sans-serif'],
       },
     },
   },
