@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import faviconLG from '../assets/favicon_LG.svg';
 
@@ -6,6 +6,14 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isMobileMenuOpen]);
 
   const handleScroll = (id: string) => {
     if (location.pathname === '/') {
@@ -26,7 +34,7 @@ const Navbar = () => {
     `py-1 px-4 border rounded-full transition duration-300 ${isActive ? 'border-neon-yellow bg-neon-yellow text-dark-bg font-bold' : 'border-neon-yellow text-neon-yellow hover:bg-neon-yellow hover:text-dark-bg'}`;
 
   const mobileNavLinkClass = ({ isActive }: { isActive: boolean }) =>
-    `text-2xl font-bold transition duration-300 ${isActive ? 'text-neon-yellow' : 'text-gray-50 hover:text-neon-yellow'}`;
+    `text-4xl font-bold transition duration-300 ${isActive ? 'text-neon-yellow' : 'text-gray-50 hover:text-neon-yellow'}`;
 
   return (
     <header className="sticky top-0 z-50 bg-dark-bg/95 backdrop-blur-sm border-b border-neon-yellow/20">
@@ -41,19 +49,23 @@ const Navbar = () => {
           <NavLink to="/blog" className={navLinkClass}>Blog</NavLink>
           <NavLink to="/#contatti" onClick={() => handleScroll('contatti')} className={contactButtonClass}>Contatti</NavLink>
         </nav>
-        <button className="md:hidden text-neon-yellow focus:outline-none" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        <button className="md:hidden text-neon-yellow focus:outline-none z-[101]" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          {isMobileMenuOpen ? (
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          ) : (
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          )}
         </button>
       </div>
 
-      {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 bg-dark-bg z-40 flex flex-col items-center justify-center space-y-8">
+      <div className={`md:hidden fixed top-0 w-full h-screen bg-black z-100 grid place-items-center transition-opacity duration-300 ease-in-out ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+        <nav className="flex flex-col items-center  w-full h-screen justify-center gap-8">
           <NavLink to="/#about" onClick={() => handleScroll('about')} className={mobileNavLinkClass}>About</NavLink>
           <NavLink to="/services" onClick={() => setIsMobileMenuOpen(false)} className={mobileNavLinkClass}>Servizi</NavLink>
           <NavLink to="/blog" onClick={() => setIsMobileMenuOpen(false)} className={mobileNavLinkClass}>Blog</NavLink>
           <NavLink to="/#contatti" onClick={() => handleScroll('contatti')} className={mobileNavLinkClass}>Contatti</NavLink>
-        </div>
-      )}
+        </nav>
+      </div>
     </header>
   );
 };
