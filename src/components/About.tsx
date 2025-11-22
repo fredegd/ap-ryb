@@ -2,7 +2,7 @@ import NeonDivider from './NeonDivider';
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-gray-900/50">
+    <section id="about" className="py-20 bg-dark-bg">
       <div className="container mx-auto px-6 max-w-4xl text-center">
         <h2 className="text-4xl font-bold uppercase mb-4 text-neon-yellow">Alessandro Paradiso</h2>
         <h2 className="text-4xl font-bold uppercase mb-4 text-neon-yellow">Terapia e Movimento</h2>

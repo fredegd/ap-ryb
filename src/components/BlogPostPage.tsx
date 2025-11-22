@@ -24,11 +24,11 @@ const BlogPostPage: React.FC = () => {
         Torna al Blog
       </Link>
 
-      <div className="max-w-4xl mx-auto p-8 bg-gray-900/50 rounded-xl shadow-2xl border border-neon-yellow/30">
+      <div className="max-w-4xl mx-auto p-8 bg-gray-500/50 rounded-xl shadow-2xl border border-neon-yellow/30">
         {article.imageUrl && (
-          <img 
-            src={article.imageUrl} 
-            alt={article.title} 
+          <img
+            src={article.imageUrl}
+            alt={article.title}
             className="w-full object-cover rounded-lg aspect-[1/1] md:aspect-[3/2] mb-8"
           />
         )}

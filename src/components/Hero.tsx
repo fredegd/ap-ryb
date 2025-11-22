@@ -1,6 +1,6 @@
 const Hero = () => {
     return (
-        <section id="home" className="relative h-[85vh] flex items-center justify-center overflow-hidden bg-gray-900/50">
+        <section id="home" className="relative h-[85vh] flex items-center justify-center overflow-hidden ">
             <div className="hero-content text-center px-4">
                 <h1 className="text-7xl md:text-9xl font-extrabold uppercase tracking-tight leading-none">
                     <span className="neon-text-glow">reset</span>

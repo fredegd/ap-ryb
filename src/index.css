@@ -1,1 +1,61 @@
 @import "tailwindcss";
+
+/* Explicit theme styles to ensure they work */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #111827;
+    --border-color: #e5e7eb;
+}
+
+:root.dark {
+    --bg-color: #000000;
+    --text-color: #f9fafb;
+    --border-color: rgba(244, 200, 3, 0.2);
+}
+
+/* Force theme application */
+.dark {
+    color-scheme: dark;
+}
+
+.light {
+    color-scheme: light;
+}
+
+/* Force theme application with high specificity */
+/* html.dark,
+html.dark body,
+html.dark #root,
+html.dark #root>div {
+    background-color: #000000 !important;
+    color: #f9fafb !important;
+}
+
+html.light,
+html.light body,
+html.light #root,
+html.light #root>div {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+} */
+
+/* Override any Tailwind classes */
+.dark * {
+    --tw-bg-opacity: 1;
+}
+
+.light * {
+    --tw-bg-opacity: 1;
+}
+
+/* Theme debugging */
+.debug-theme {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: white;
+    padding: 5px;
+    z-index: 9999;
+    font-size: 12px;
+}
