@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import faviconLG from '../assets/favicon_LG.svg';
 
@@ -27,7 +27,7 @@ const Navbar = () => {
 
   const mobileNavLinkClass = ({ isActive }: { isActive: boolean }) =>
     `text-2xl font-bold transition duration-300 ${isActive ? 'text-neon-yellow' : 'text-gray-50 hover:text-neon-yellow'}`;
-    
+
   return (
     <header className="sticky top-0 z-50 bg-dark-bg/95 backdrop-blur-sm border-b border-neon-yellow/20">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">

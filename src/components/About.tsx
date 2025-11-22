@@ -1,4 +1,3 @@
-import React from 'react';
 import NeonDivider from './NeonDivider';
 
 const About = () => {

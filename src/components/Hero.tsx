@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 
 const Hero = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -147,7 +147,7 @@ const Hero = () => {
                 mouse.y = event.clientY - rect.top;
             }
         };
-        
+
         const touchMoveHandler = (event: TouchEvent) => {
             if (event.touches.length > 0) {
                 const touch = event.touches[0];
@@ -161,7 +161,7 @@ const Hero = () => {
 
         init();
         animate();
-        
+
         window.addEventListener('resize', init);
         document.addEventListener('mousemove', mouseMoveHandler);
         document.addEventListener('touchmove', touchMoveHandler, { passive: true });

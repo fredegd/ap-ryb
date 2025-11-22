@@ -1,4 +1,3 @@
-import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { blogArticles } from '../blogData';
 import type { Article } from '../blogData';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import NeonDivider from './NeonDivider';
 import { services } from '../servicesData';
@@ -28,9 +27,9 @@ const Services = () => {
           })}
         </div>
         <div className="text-center mt-12">
-            <Link to="/services" className="inline-block bg-neon-yellow text-dark-bg font-bold text-lg px-8 py-3 rounded-lg hover:bg-opacity-80 transition duration-300">
-                Vedi Tutti i Servizi
-            </Link>
+          <Link to="/services" className="inline-block bg-neon-yellow text-dark-bg font-bold text-lg px-8 py-3 rounded-lg hover:bg-opacity-80 transition duration-300">
+            Vedi Tutti i Servizi
+          </Link>
         </div>
       </div>
     </section>
