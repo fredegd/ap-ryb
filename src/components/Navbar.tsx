@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import faviconLG from '../assets/favicon_LG.svg';
 import ThemeSwitch from './ThemeSwitch';
 
@@ -10,9 +10,6 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Check if current path matches route patterns for highlighting
-  const isServicesActive = location.pathname === '/services' || location.pathname.startsWith('/services/');
-  const isBlogActive = location.pathname === '/blog' || location.pathname.startsWith('/blog/');
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -76,7 +73,6 @@ const Navbar = () => {
           <NavLink to="/#about" onClick={() => handleScroll('about')} >About</NavLink>
           <NavLink to="/services" className={navLinkClass}>Servizi</NavLink>
           <NavLink to="/blog" className={navLinkClass}>Blog</NavLink>
-
           <NavLink to="/#contatti" onClick={() => handleScroll('contatti')} >Contatti</NavLink>
           <ThemeSwitch />
         </nav>
@@ -91,28 +87,10 @@ const Navbar = () => {
 
       <div className={`md:hidden fixed top-0 w-full h-screen bg-white dark:bg-black z-100 grid place-items-center transition-opacity duration-300 ease-in-out ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
         <nav className="flex flex-col items-center w-full h-screen justify-center gap-8">
-          <NavLink to="/#about" onClick={() => handleScroll('about')} className={mobileNavLinkClass}>About</NavLink>
-          <Link
-            to="/services"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className={isServicesActive
-              ? 'text-4xl font-bold transition duration-300 '
-              : 'text-4xl font-bold transition duration-300 text-gray-900 dark:text-gray-50 hover:'
-            }
-          >
-            Servizi
-          </Link>
-          <Link
-            to="/blog"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className={isBlogActive
-              ? 'text-4xl font-bold transition duration-300 '
-              : 'text-4xl font-bold transition duration-300 text-gray-900 dark:text-gray-50 hover:'
-            }
-          >
-            Blog
-          </Link>
-          <NavLink to="/#contatti" onClick={() => handleScroll('contatti')} className={mobileNavLinkClass}>Contatti</NavLink>
+          <NavLink to="/#about" onClick={() => handleScroll('about')} >About</NavLink>
+          <NavLink to="/services" className={mobileNavLinkClass}>Servizi</NavLink>
+          <NavLink to="/blog" className={mobileNavLinkClass}>Blog</NavLink>
+          <NavLink to="/#contatti" onClick={() => handleScroll('contatti')} >Contatti</NavLink>
           <div className="mt-4">
             <ThemeSwitch />
           </div>

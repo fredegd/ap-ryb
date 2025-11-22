@@ -1,15 +1,7 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
-
-export type Theme = 'light' | 'dark';
-
-interface ThemeContextType {
-    theme: Theme;
-    toggleTheme: () => void;
-    setTheme: (theme: Theme) => void;
-}
-
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+import { ThemeContext } from './themeContext.shared';
+import type { Theme, ThemeContextType } from './theme.types';
 
 const THEME_STORAGE_KEY = 'ap-website-theme';
 
@@ -116,12 +108,4 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
             {children}
         </ThemeContext.Provider>
     );
-};
-
-export const useTheme = (): ThemeContextType => {
-    const context = useContext(ThemeContext);
-    if (context === undefined) {
-        throw new Error('useTheme must be used within a ThemeProvider');
-    }
-    return context;
 };

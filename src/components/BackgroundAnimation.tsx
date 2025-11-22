@@ -1,5 +1,5 @@
 import './BackgroundAnimation.css';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../context/useTheme';
 
 const BackgroundAnimation = () => {
   const { theme } = useTheme();
