@@ -4,6 +4,8 @@ import faviconLG from '../assets/favicon_LG.svg';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -18,6 +20,28 @@ const Navbar = () => {
       document.body.style.overflow = 'unset';
     }
   }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    const controlNavbar = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < lastScrollY || currentScrollY < 10) {
+        // Scrolling up or at top
+        setIsVisible(true);
+      } else {
+        // Scrolling down
+        setIsVisible(false);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', controlNavbar);
+
+    return () => {
+      window.removeEventListener('scroll', controlNavbar);
+    };
+  }, [lastScrollY]);
 
   const handleScroll = (id: string) => {
     if (location.pathname === '/') {
@@ -41,7 +65,8 @@ const Navbar = () => {
     `text-4xl font-bold transition duration-300 ${isActive ? 'text-neon-yellow' : 'text-gray-50 hover:text-neon-yellow'}`;
 
   return (
-    <header className="sticky top-0 z-50 bg-dark-bg/95 backdrop-blur-sm border-b border-neon-yellow/20">
+    <header className={`fixed top-0 w-full z-50 bg-dark-bg/95 backdrop-blur-sm border-b border-neon-yellow/20 transition-transform duration-300 ease-in-out ${isVisible ? 'translate-y-0' : '-translate-y-full'
+      }`}>
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <NavLink to="/" className="flex items-center space-x-3">
           <img src={faviconLG} alt="AP Logo" className="w-12 h-12" />
