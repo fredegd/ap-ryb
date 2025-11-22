@@ -16,7 +16,7 @@ const BlogPreview = () => {
         .slice(0, 3); // Nur die ersten 3 Artikel
 
     return (
-        <section className="py-20 bg-gray-800/30">
+        <section className="py-20 bg-gray-900/50">
             <div className="container mx-auto px-6">
                 <h2 className="text-4xl font-bold uppercase text-center mb-4 text-neon-yellow">
                     Dal mio Blog                </h2>
