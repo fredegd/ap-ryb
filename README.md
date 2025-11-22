@@ -1,73 +1,35 @@
-# React + TypeScript + Vite
+# Alessandro Paradiso - Massoterapista & Chinesiologo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the official website for Alessandro Paradiso, a professional Massoterapista (Massage Therapist) and Chinesiologo (Kinesiologist). The website is designed to provide information about the services offered, share blog articles related to wellness and fitness, and provide contact information.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+*   **Homepage**: A comprehensive overview of the services, a preview of the blog, and contact information.
+*   **Services**: A dedicated page listing all the services offered, with detailed descriptions for each.
+*   **Blog**: A blog section with articles on various topics related to fitness, health, and wellness. Each blog post has its own dedicated page.
+*   **Responsive Design**: The website is fully responsive and works on mobile devices.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+*   **Framework**: [React](https://react.dev/)
+*   **Build Tool**: [Vite](https://vitejs.dev/)
+*   **Language**: [TypeScript](https://www.typescriptlang.org/)
+*   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+*   **Routing**: [React Router](https://reactrouter.com/)
+*   **Package Manager**: [Bun](https://bun.sh/)
 
-## Expanding the ESLint configuration
+## Running the Application
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+To run the application locally, follow these steps:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1.  **Install dependencies**:
+    ```bash
+    bun install
+    ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+2.  **Start the development server**:
+    ```bash
+    bun dev
+    ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This will start the development server, and you can view the application by navigating to `http://localhost:5173` in your web browser.
