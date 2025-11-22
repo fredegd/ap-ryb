@@ -7,15 +7,18 @@
   background-color: #000000;
   overflow: hidden;
   z-index: -1;
+  filter: blur(20px) contrast(20);
+  will-change: filter;
 }
 
 .blob {
   position: absolute;
   background-color: #ffffff;
-  border-radius: 50%;
-  opacity: 0.1;
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  opacity: 0.3;
   filter: blur(40px);
-  animation: move 25s infinite alternate;
+  animation: move 15s infinite alternate, morph 10s infinite;
+  will-change: transform, border-radius;
 }
 
 .blob1 {
@@ -23,7 +26,7 @@
   height: 400px;
   top: -100px;
   left: -100px;
-  animation-duration: 25s;
+  animation-duration: 15s;
 }
 
 .blob2 {
@@ -31,7 +34,7 @@
   height: 300px;
   top: 50%;
   left: 50%;
-  animation-duration: 20s;
+  animation-duration: 12s;
   animation-delay: -5s;
 }
 
@@ -40,7 +43,7 @@
   height: 250px;
   top: 80%;
   left: 20%;
-  animation-duration: 30s;
+  animation-duration: 18s;
   animation-delay: -10s;
 }
 
@@ -49,7 +52,7 @@
   height: 200px;
   top: 10%;
   left: 80%;
-  animation-duration: 15s;
+  animation-duration: 9s;
   animation-delay: -15s;
 }
 
@@ -58,7 +61,7 @@
   height: 350px;
   top: 40%;
   left: -200px;
-  animation-duration: 35s;
+  animation-duration: 21s;
   animation-delay: -20s;
 }
 
@@ -68,5 +71,17 @@
   }
   to {
     transform: translate(500px, 500px) rotate(360deg);
+  }
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  }
+  50% {
+    border-radius: 60% 40% 30% 70% / 50% 60% 50% 40%;
+  }
+  100% {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
   }
 }
